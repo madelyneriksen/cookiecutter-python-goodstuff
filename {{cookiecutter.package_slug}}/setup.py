@@ -1,7 +1,6 @@
 """Setup file for {{ cookiecutter.package_name }}"""
 
 
-import subprocess
 import setuptools
 
 
