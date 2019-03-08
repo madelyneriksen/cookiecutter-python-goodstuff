@@ -18,6 +18,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_slug}}",
     packages=setuptools.find_packages(),
+    setup_requires=[
+        'pytest-runner>=2.0',
+    ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
