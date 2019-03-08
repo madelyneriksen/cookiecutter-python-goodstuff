@@ -1,0 +1,4 @@
+cookiecutter>=1.6.0
+pytest-pylint>=0.14.0
+pytest>=3.3.0
+pytest-cookies>=0.3.0
