@@ -18,6 +18,15 @@ def remove_bin_directory():
         shutil.rmtree('bin', ignore_errors=True)
         os.remove(os.path.join(PACKAGE_DIR, 'cli.py'))
 
+
+def remove_dockerfile():
+    """Remove the Dockerfile if not requested."""
+    if ("{{ cookiecutter.dockerize_cli_script }}" != "yes" and
+            os.path.exists("Dockerfile")):
+        os.remove("Dockerfile")
+
+
 if __name__ == "__main__":
     remove_bin_directory()
+    remove_dockerfile()
     sys.exit(0)
