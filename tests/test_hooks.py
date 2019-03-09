@@ -45,6 +45,9 @@ def test_dockerfile_removed_in_hook(cookies):
     assert result.exit_code == 0
     assert not os.path.exists(result.project.join('Dockerfile'))
 
+    readme = result.project.join("README.md").read()
+    assert "Docker" not in readme
+
 
 def test_dockerfile_kept_when_requested(cookies):
     """Test dockerfiles are kept when requested."""
@@ -58,3 +61,6 @@ def test_dockerfile_kept_when_requested(cookies):
     })
     assert result.exit_code == 0
     assert os.path.exists(result.project.join('Dockerfile'))
+
+    readme = result.project.join("README.md").read()
+    assert "Docker" in readme
