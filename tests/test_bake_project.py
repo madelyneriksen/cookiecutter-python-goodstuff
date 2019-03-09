@@ -32,8 +32,8 @@ def test_project_tree(cookies):
     assert result.project.basename == 'test-project'
 
 
-def test_cli_scripts_removed_in_hool(cookies):
-    """Test the resulting project tree is named correctly."""
+def test_cli_scripts_removed_in_hook(cookies):
+    """Test the removal of cli scripts in post script."""
     result = cookies.bake(extra_context={
         "package_name": "test_project",
         "package_slug": "test-project",
@@ -47,7 +47,7 @@ def test_cli_scripts_removed_in_hool(cookies):
 
 
 def test_cli_scripts_kept_when_requested(cookies):
-    """Test the resulting project tree is named correctly."""
+    """Test cli scripts are kept when requested."""
     result = cookies.bake(extra_context={
         "package_name": "test_project",
         "package_slug": "test-project",
