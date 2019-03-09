@@ -1,3 +1,8 @@
 pytest-pylint>=0.14.0
 pytest>=3.3.0
 pytest-cov>=2.6.0
+{% if cookiecutter.type_checker == "MyPy" %}
+mypy>=0.670
+{% elif cookiecutter.type_checker == "Pyre" %}
+pyre-check>=0.0.20,<1.0.0
+{% endif %}

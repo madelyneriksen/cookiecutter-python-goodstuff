@@ -8,6 +8,7 @@
     "package_short_description": "A short description of the package",
     "release_date": "{% now 'local' %}",
     "version": "0.1.0",
+    "type_checker": ["MyPy", "Pyre", "None, thanks!"],
     "add_cli_script": ["yes", "no"],
     "dockerize_cli_script": ["yes", "no"],
     "_extensions": ["jinja2_time.TimeExtension"]
