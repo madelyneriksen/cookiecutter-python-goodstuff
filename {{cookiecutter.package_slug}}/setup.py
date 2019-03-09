@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 
 setuptools.setup(
-    name="{{ cookiecutter.package_slug }}",
+    name="{{ cookiecutter.package_name }}",
     version="{{ cookiecutter.version }}",
     author="{{ cookiecutter.full_name }}",
     author_email="{{ cookiecutter.email }}",
