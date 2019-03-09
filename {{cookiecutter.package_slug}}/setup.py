@@ -25,10 +25,8 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-    ],
-    {% if cookiecutter.add_cli_script == "yes" %}
+    ],{% if cookiecutter.add_cli_script == "yes" %}
     scripts=[
         'bin/{{ cookiecutter.package_name }}'
-    ],
-    {% endif %}
+    ],{% endif %}
 )
