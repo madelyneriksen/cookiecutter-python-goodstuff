@@ -1,12 +1,13 @@
 {
-    "full_name": "Your Name",
-    "email": "Your Address Email (eq. you@example.com)",
-    "github_username": "Your Github Username",
-    "package_title": "Package Title (ex. Awesome Project)",
+    "full_name": "Jane Doe",
+    "email": "janedoe@example.com",
+    "github_username": "janedoe",
+    "package_title": "Awesome Project",
     "package_name": "{{ cookiecutter.package_title.lower().replace(' ', '_') }}",
     "package_slug": "{{ cookiecutter.package_title.lower().replace(' ', '-') }}",
     "package_short_description": "A short description of the package",
     "release_date": "{% now 'local' %}",
     "version": "0.1.0",
+    "add_cli_script": ["yes", "no"],
     "_extensions": ["jinja2_time.TimeExtension"]
 }

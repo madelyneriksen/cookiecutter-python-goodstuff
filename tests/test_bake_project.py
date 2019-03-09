@@ -30,3 +30,31 @@ def test_project_tree(cookies):
     assert result.exit_code == 0
     assert result.exception is None
     assert result.project.basename == 'test-project'
+
+
+def test_project_tree_post_scripts_removal(cookies):
+    """Test the resulting project tree is named correctly."""
+    result = cookies.bake(extra_context={
+        "package_name": "test_project",
+        "package_slug": "test-project",
+        "package_title": "Test Project",
+        "package_short_description": "Short description.",
+        "add_cli_script": "no"
+    })
+    assert result.exit_code == 0
+    assert not os.path.exists(result.project.join('test_project').join('cli.py'))
+    assert not os.path.exists(result.project.join('bin').join('test_project'))
+
+
+def test_cli_scripts_kept_when_requested(cookies):
+    """Test the resulting project tree is named correctly."""
+    result = cookies.bake(extra_context={
+        "package_name": "test_project",
+        "package_slug": "test-project",
+        "package_title": "Test Project",
+        "package_short_description": "Short description.",
+        "add_cli_script": "yes"
+    })
+    assert result.exit_code == 0
+    assert os.path.exists(result.project.join('test_project').join('cli.py'))
+    assert os.path.exists(result.project.join('bin').join('test_project'))
