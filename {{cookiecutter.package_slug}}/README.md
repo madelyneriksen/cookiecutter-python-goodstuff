@@ -54,3 +54,17 @@ Coverage Report:
 
 ====== X Passed, X Skipped in .38 seconds =====
 ```
+
+{% if cookiecutter.type_checker == "Pyre" %}
+{{ cookiecutter.package_title }} checks typing with [Pyre Check](https://pyre-check.org/). Type check your code like this:
+
+```bash
+pyre --source-directory {{ cookiecutter.package_name }} check
+```
+{% elif cookiecutter.type_checker == "MyPy" %}
+{{ cookiecutter.package_title }} checks typing with MyPy. Type check your code like this:
+
+```bash
+mypy {{ cookiecutter.package_name }}
+```
+{% endif %}
