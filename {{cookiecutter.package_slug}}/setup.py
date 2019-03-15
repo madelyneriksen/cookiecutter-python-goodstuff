@@ -7,10 +7,13 @@ import setuptools
 with open("README.md", "r") as fh:
     DESC = fh.read()
 
+with open("VERSION", "r") as ver:
+    VERSION = ver.read()
+
 
 setuptools.setup(
     name="{{ cookiecutter.package_name }}",
-    version="{{ cookiecutter.version }}",
+    version=VERSION,
     author="{{ cookiecutter.full_name }}",
     author_email="{{ cookiecutter.email }}",
     description="{{ cookiecutter.package_short_description }}",
