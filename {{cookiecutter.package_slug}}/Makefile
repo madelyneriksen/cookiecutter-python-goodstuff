@@ -2,7 +2,9 @@ SHELL=/bin/bash
 VERSION=$(shell cat VERSION)
 
 .PHONY: build
-build: test
+build: dist/{{ cookiecutter.package_name }}-${VERSION}.tar.gz
+
+dist/{{ cookiecutter.package_name }}-${VERSION}.tar.gz: .env/bin/activate
 	(\
 	  source .env/bin/activate; \
 	  python setup.py sdist bdist; \
