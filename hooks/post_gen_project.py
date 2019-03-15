@@ -26,7 +26,15 @@ def remove_dockerfile():
         os.remove("Dockerfile")
 
 
+def remove_makefile():
+    """Remove the makefile if not requested."""
+    if ("{{ cookiecutter.optional_makefile }}" != "yes" and
+            os.path.exists("Makefile")):
+        os.remove("Makefile")
+
+
 if __name__ == "__main__":
     remove_bin_directory()
     remove_dockerfile()
+    remove_makefile()
     sys.exit(0)
