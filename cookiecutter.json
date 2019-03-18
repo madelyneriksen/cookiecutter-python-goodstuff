@@ -12,5 +12,6 @@
     "add_cli_script": ["yes", "no"],
     "dockerize_cli_script": ["yes", "no"],
     "optional_makefile": ["yes", "no"],
+    "license": ["MIT", "BSD", "Apache", "GPL v3"],
     "_extensions": ["jinja2_time.TimeExtension"]
 }

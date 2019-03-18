@@ -26,7 +26,15 @@ setuptools.setup(
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
+        {%- if cookiecutter.license == 'MIT' %}
         "License :: OSI Approved :: MIT License",
+        {%- elif cookiecutter.license == 'BSD' %}
+        "License :: OSI Approved :: BSD License",
+        {%- elif cookiecutter.license == 'Apache' %}
+        "License :: OSI Approved :: Apache Software License",
+        {%- elif cookiecutter.license == 'GPL v3' %}
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        {% endif %}
         "Operating System :: OS Independent",
     ],{% if cookiecutter.add_cli_script == "yes" %}
     scripts=[
