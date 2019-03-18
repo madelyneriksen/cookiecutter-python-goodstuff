@@ -14,9 +14,12 @@ dist/{{ cookiecutter.package_name }}-${VERSION}.tar.gz: .env/bin/activate
 test: .env/bin/activate
 	(\
 	  source .env/bin/activate; \
-	  pytest; \{% if cookiecutter.type_checker == "Pyre" %}
-	  pyre --source-directory {{ cookiecutter.package_name }} check; \{% elif cookiecutter.type_checker == "MyPy" %}
-	  mypy {{ cookiecutter.package_name }}; \{% endif %}
+	  pytest; \
+	  {%- if cookiecutter.type_checker == "Pyre" %}
+	  pyre --source-directory {{ cookiecutter.package_name }} check; \
+	  {%- elif cookiecutter.type_checker == "MyPy" %}
+	  mypy {{ cookiecutter.package_name }}; \
+	  {%- endif %}
 	)
 
 .env/bin/activate:
@@ -40,4 +43,4 @@ docker-build:
 .PHONY: docker-run
 docker-run: docker-build
 	docker run -it --rm {{ cookiecutter.package_slug }}:latest
-{% endif %}
+{%- endif -%}
