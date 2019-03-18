@@ -34,7 +34,7 @@ setuptools.setup(
         "License :: OSI Approved :: Apache Software License",
         {%- elif cookiecutter.license == 'GPL v3' %}
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-        {% endif %}
+        {%- endif %}
         "Operating System :: OS Independent",
     ],{% if cookiecutter.add_cli_script == "yes" %}
     scripts=[
